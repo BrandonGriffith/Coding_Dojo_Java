@@ -19,5 +19,5 @@ function removeDupes(arr){
     return arr;
 }
 
-console.log(removeDupes([3,6,7,3,2,7,7,9,0,1])) //output-> [3,6,7,2,9,0,1]
+console.log(removeDupes([3,6,7,3,2,7,7,9,0,1,7,3,7,6,7])) //output-> [3,6,7,2,9,0,1]
 
