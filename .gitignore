@@ -80,5 +80,5 @@ $RECYCLE.BIN/
 .project
 org.eclipse.jdt.core.prefs
 .classpath
-
+module-info.java
 
