@@ -7,7 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HumanController {
 	@RequestMapping("/")
-    public String index(@RequestParam(value="name", required=false) String name) {
-        return "Hello " + name;
+    public String index(@RequestParam(value="name", required=false) String firstName, 
+    		@RequestParam(value="last_name", required=false) String lastName,
+    		@RequestParam(value="times", required=false, defaultValue = "0") int times
+    		) {
+        if(firstName != null) {
+        	if(lastName != null) {
+        		if(times > 0) {
+        			return ("Hello " + firstName + " " + lastName + " ").repeat(times);
+        		}
+        		return "Hello " + firstName + " " + lastName;
+        	}
+        	return "Hello " + firstName;
+        }
+		return "Hello Human";
     }
 }
