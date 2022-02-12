@@ -1,0 +1,10 @@
+pom.xml ------ Dependencies ---------------- tomcat-embed-jasper ------------------ jstl javax.servlet
+
+Create the src/main/webapp/WEB-INF folder
+
+Create an index.jsp inside the /WEB-INF/ folder
+
+Add to very top of index.jsp file ------------------------ <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
+Edit the src/main/resources/applications.properties ---------------------------- spring.mvc.view.prefix=/WEB-INF/
+
