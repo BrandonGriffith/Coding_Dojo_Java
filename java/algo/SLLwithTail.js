@@ -68,6 +68,7 @@ class SLL {
             this.tail.value = null;
             this.tail = this.b_tail;
             this.tail.next = null;
+            this.b_tail = null;
             return;
         }
         let runner = this.head;
@@ -101,7 +102,6 @@ sll1.removeFront();
 sll1.display();
 sll1.removeBack();
 sll1.display();
-
 
 
 // console.log(sll1)
