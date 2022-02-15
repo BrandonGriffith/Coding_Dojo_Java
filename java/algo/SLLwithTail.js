@@ -53,6 +53,39 @@ class SLL {
             this.head = newNode;
         }
     }
+
+    removeFront(){
+        this.count--;
+        let temp = this.head;
+        this.head = this.head.next;
+        temp.value = null;
+        temp.next = null;
+    }
+
+    removeBack(){
+        this.count--;
+        if(this.b_tail != null){
+            this.tail.value = null;
+            this.tail = this.b_tail;
+            this.tail.next = null;
+            return;
+        }
+        let runner = this.head;
+        if(runner.next == null){
+            runner.value = null;
+            runner = null;
+        }else{
+            while(runner){
+                if(runner.next.next === null){
+                    this.tail = runner;
+                    runner.next.value = null;
+                    runner.next = null;
+                    return;
+                }this.b_tail = runner;
+                runner = runner.next;
+            }
+        }
+    }
 }
 
 
@@ -63,6 +96,10 @@ sll1.addToBack(15);
 sll1.addToBack(9);
 sll1.addToFront(11);
 sll1.addToFront(20);
+sll1.display();
+sll1.removeFront();
+sll1.display();
+sll1.removeBack();
 sll1.display();
 
 
