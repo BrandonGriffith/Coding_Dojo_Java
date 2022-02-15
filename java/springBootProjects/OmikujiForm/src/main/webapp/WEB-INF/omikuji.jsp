@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/style.css">
-<title>Insert title here</title>
+<title>Omikuji</title>
 </head>
 <body>
     <div class="container text-center omikuji">
@@ -18,6 +18,9 @@
         The next time you see a <%= session.getAttribute("animal")  %>, you will 
         have good luck. Also, <%= session.getAttribute("nice")  %>.
     </p>
+    </div>
+    <div class="text-center">
+        <a href="/">Go Back</a>
     </div>
 </body>
 </html>

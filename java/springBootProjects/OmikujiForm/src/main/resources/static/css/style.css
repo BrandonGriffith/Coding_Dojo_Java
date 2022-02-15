@@ -1,5 +1,5 @@
 body {
-    background-color: aqua;
+    background-color: whitesmoke;
 }
 h1 {
     font-size: 80px;
@@ -10,11 +10,13 @@ h1 {
     margin: 0px auto;
 }
 .omikuji {
-    background-color: whitesmoke;
+    background-color: rgb(108, 123, 207);
     text-align: center;
+    color: white;
 }
 .omikuji-form {
-    background-color: whitesmoke;
+    background-color: rgb(106, 106, 209);
     width: 40%;
     padding: 10px;
+    color: white;
 }
