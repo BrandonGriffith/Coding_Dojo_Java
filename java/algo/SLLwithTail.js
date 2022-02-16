@@ -84,6 +84,21 @@ class SLL {
             }
         }
     }
+
+    reverse(temp=null) {
+        if(this.head.next != null) {
+            if(temp == null){
+                this.tail = this.head;
+                this.b_tail = this.head.next;
+            }
+            let runner = this.head;
+            this.head = this.head.next;
+            runner.next = temp;
+            return this.reverse(runner);
+        }
+        this.head.next = temp;
+        return this;
+    }
 }
 
 
@@ -99,7 +114,8 @@ sll1.removeFront();
 sll1.display();
 sll1.removeBack();
 sll1.display();
-
+sll1.reverse();
+sll1.display();
 
 // console.log(sll1)
 // let firstNode = new Node(3);

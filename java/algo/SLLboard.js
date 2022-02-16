@@ -71,8 +71,8 @@ class SLL {
         }
     }
 
-    reverse(temp=null) {
-        if (this.head.next != null) {
+    reverse(temp=null){
+        if(this.head.next != null){
             let runner = this.head;
             this.head = this.head.next;
             runner.next = temp;
@@ -80,27 +80,6 @@ class SLL {
         }
         this.head.next = temp;
         return;
-    }
-
-    addToList(index, valueInput){
-        let newNode = new Node(valueInput);
-        if(this.head == null){
-            this.head = newNode;
-            return;
-        }
-        let count = 1;
-        let runner = this.head;
-        while(count<index){
-            runner = runner.next;
-            count++;
-        }
-        if(index == 0){
-            newNode.next = this.head;
-            this.head = newNode;
-        }else{
-            newNode.next = runner.next;
-            runner.next = newNode;
-        }
     }
 }
 
@@ -120,14 +99,3 @@ sll1.removeBack();
 sll1.display();
 sll1.reverse();
 sll1.display();
-sll1.addToList(4, 69);
-sll1.display();
-
-
-
-// console.log(sll1)
-// let firstNode = new Node(3);
-// let secondNode = new Node(9);
-// firstNode.next = secondNode
-// let thirdNode = new Node(12);
-// secondNode.next = thirdNode;
