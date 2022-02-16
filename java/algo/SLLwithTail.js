@@ -14,16 +14,13 @@ class SLL {
     }
 
     addToBack(valueInput){
-        //create a node object with a given value to add to the back of the list eventually 
         let newNode = new Node(valueInput);
         this.count++;
-        //if the singly linked list is empty (this mean that its head === null), then set the head of the singly linked list to be this new node
         if(this.head == null){
             this.head = newNode;
             this.b_tail = newNode;
             this.tail = newNode;
-        }//otherwise (else) go to the end of the list and insert the node to the end
-        else{ //else means that the list is not empty
+        }else{
             this.b_tail = this.tail;
             this.tail.next = newNode;
             this.tail = newNode;
@@ -32,10 +29,10 @@ class SLL {
 
     display(){
         let result = "";
-        let runner = this.head; //use runner to traverse the SLL
-        while(runner != null){ //while runner is pointing at a node
+        let runner = this.head;
+        while(runner != null){
             result += `${runner.value} --> `;
-            runner = runner.next; //this is how you increment runner to go to the next node
+            runner = runner.next;
         }
         console.log(result);
         console.log("The list size is " + this.count);
