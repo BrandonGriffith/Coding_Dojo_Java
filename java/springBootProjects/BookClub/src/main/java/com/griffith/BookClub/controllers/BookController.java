@@ -96,6 +96,24 @@ public class BookController {
 		return "editBook.jsp";
 	}
     
+    @RequestMapping("/books/user/{id}")
+    public String bookUser(@PathVariable("id") Long user_id, HttpSession session, Model model) {
+        Long id = (Long) session.getAttribute("loggedInUserID");
+        if(id == null) {
+            return "redirect:/";
+        }
+        User loggedInUser = this.userService.findOneUser(id);
+        model.addAttribute("loggedInUser", loggedInUser);
+        
+        List<Book> allBooks = this.bookService.allBooks();
+		model.addAttribute("allBooks", allBooks);
+		
+		User user = this.userService.findOneUser(user_id);
+        model.addAttribute("user", user);
+		
+        return "user.jsp";
+    }
+    
     @PutMapping("/books/update/{id}")
 	public String update(@PathVariable("id") Long id, @Valid @ModelAttribute("bookToEdit") Book bookEdit, BindingResult result, Model model) {
 		if(result.hasErrors()) {

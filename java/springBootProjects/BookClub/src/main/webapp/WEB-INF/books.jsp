@@ -34,7 +34,7 @@ crossorigin="anonymous">
 					<th scope="row">${bookObj.id}</th>
 					<td><a href="/books/${bookObj.id}">${bookObj.title}</a></td>
 					<td>${bookObj.author}</td>
-					<td>${bookObj.user.userName}</td>
+					<td><a href="/books/user/${bookObj.user.id}">${bookObj.user.userName}</a></td>
 					<td>
 						<c:if test="${loggedInUser.id == bookObj.user.id}">
 						<a href="/books/edit/${bookObj.id}">Edit</a> ||
