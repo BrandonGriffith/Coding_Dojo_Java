@@ -92,6 +92,7 @@ public class BookController {
         model.addAttribute("loggedInUser", loggedInUser);
 		Book bookToEdit = this.bookService.findBook(id);
 		model.addAttribute("bookToEdit", bookToEdit);
+		if(loggedInUser.getId() != bookToEdit.getUser().getId()) return "redirect:/books";
 		return "editBook.jsp";
 	}
     

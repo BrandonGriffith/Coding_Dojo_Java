@@ -13,21 +13,23 @@ crossorigin="anonymous">
 </head>
 <body>
 	<div class="container col-4">
+	<h1>Hello ${loggedInUser.userName}</h1>
 	<a href="/books">Go Back</a>
     <h1>${book.title}</h1>
     <h2>
-        <span style="color:red;">${loggedInUser.userName}</span> 
+        <span style="color:red;">${book.user.userName}</span> 
         read 
         <span style="color:purple;">${book.title}</span> 
         by <span style="color:green;">${book.author}</span>
     </h2>
     <p></p>
-    <h3>Here are ${loggedInUser.userName} thoughts:</h3>
+    <h3>Here are ${book.user.userName} thoughts:</h3>
     <hr>
     <h3>${book.thought}</h3>
     <hr>
     <c:if test="${loggedInUser.id == book.user.id}">
-		<a href="/books/edit/${book.id}" class="btn btn-danger">Edit</a>
+		<a href="/books/edit/${book.id}" class="btn btn-danger">Edit</a> || 
+		<a href="/books/delete/${book.id}" class="btn btn-danger">Delete</a>
 	</c:if>
     </div>
 </body>

@@ -36,7 +36,7 @@ crossorigin="anonymous">
                         <p>
                             <form:input type="hidden" path="user" value="${loggedInUser.id}"/>
                         </p>
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" /> || <a href="/books/delete/${bookToEdit.id}" class="btn btn-danger">Delete</a>
         </form:form>
     </div>
 </body>
