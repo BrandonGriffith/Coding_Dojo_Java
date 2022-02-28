@@ -60,6 +60,19 @@ class BST{
             console.log(runner.value + " is max");
         }
     }
+
+    contain(value, runner=this.root){
+        if(runner.value == value){
+            console.log("true");
+            return true;
+        }
+        if(runner.left != null){
+            this.contain(value, runner.left);
+        }
+        if(runner.right != null){
+            this.contain(value, runner.right);
+        }
+    }
 }
 
 
@@ -77,4 +90,5 @@ bst1.traverse();
 console.log("---------------------");
 bst1.findMin();
 bst1.findMax();
-
+bst1.contain(4);
+bst1.contain(1);
