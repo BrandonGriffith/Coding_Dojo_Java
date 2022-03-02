@@ -73,6 +73,23 @@ class BST{
             this.contain(value, runner.right);
         }
     }
+
+    getHeight(node = this.root, count=0){
+        if(node == null){
+            return count;
+        }else{
+            let max = Math.max(this.getHeight(node.left, count+1), this.getHeight(node.right, count+1));
+            return max;
+        }
+    }
+
+    getSize(runner=this.root){
+        if(runner == null){
+            return 0;
+        }else{
+            return 1+ this.getSize(runner.left) + this.getSize(runner.right);
+        }
+    }
 }
 
 
@@ -92,3 +109,6 @@ bst1.findMin();
 bst1.findMax();
 bst1.contain(4);
 bst1.contain(1);
+console.log(bst1.getHeight());
+console.log("---------------------");
+console.log(bst1.getSize());
